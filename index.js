@@ -1,10 +1,9 @@
-// importing modules
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const axios = require("axios");
-const sha256 = require("sha256");
-const uniqid = require("uniqid");
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import axios from "axios";
+import sha256 from "sha256";
+import uniqid from "uniqid";
 
 // creating express application
 const app = express();
@@ -57,7 +56,6 @@ app.get("/pay", async function (req, res, next) {
       "type": "PAY_PAGE"
     }
   };
-  
 
   // make base64 encoded payload
   let bufferObj = Buffer.from(JSON.stringify(normalPayLoad), "utf8");
@@ -134,10 +132,7 @@ app.get("/payment/validate/:merchantTransactionId", async function (req, res) {
 });
 
 // Starting the server
-const port = process.env.PORT | 3002;
+const port = process.env.PORT || 3002;
 app.listen(port, () => {
   console.log(`PhonePe application listening on port ${port}`);
 });
-
-
-

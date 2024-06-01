@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "name": "phonepe-integration",
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
+    ],
+    "env": {
+      "MERCHANT_ID": "M22TROUS6PUV1",
+      "PHONE_PE_HOST_URL": "https://api.phonepe.com/apis/hermes",
+      "SALT_INDEX": "1",
+      "SALT_KEY": "650230d9-4338-431e-89b4-f7c36f9d8c7a",
+      "APP_BE_URL": "http://localhost:3002"
+    }
+  }
+  
